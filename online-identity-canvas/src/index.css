@@ -1,0 +1,69 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 200 15% 6%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 189 100% 50%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 189 100% 50%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 189 100% 50%;
+    --radius: 1rem;
+    --color-1: 0 100% 63%;
+    --color-2: 270 100% 63%;
+    --color-3: 210 100% 63%;
+    --color-4: 195 100% 63%;
+    --color-5: 90 100% 63%;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-[#0A0F16] text-white min-h-screen overflow-x-hidden;
+    background-image: radial-gradient(circle at center, rgba(0,229,255,0.1) 0%, transparent 70%);
+  }
+}
+
+.nav-link {
+  @apply relative text-white hover:text-primary transition-colors duration-200;
+}
+
+.nav-link::after {
+  @apply content-[''] absolute left-0 bottom-[-4px] w-0 h-[2px] bg-primary transition-all duration-300;
+}
+
+.nav-link:hover::after {
+  @apply w-full;
+}
+
+.social-icon {
+  @apply text-white hover:text-primary transition-all duration-300 hover:scale-110;
+}
+
+.glow-effect {
+  @apply relative;
+}
+
+.glow-effect::before {
+  @apply content-[''] absolute inset-0 bg-primary/20 blur-xl opacity-0 transition-opacity duration-300;
+}
+
+.glow-effect:hover::before {
+  @apply opacity-100;
+}
